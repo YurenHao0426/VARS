@@ -1,0 +1,5 @@
+retrieval:
+  dense_topk: 64       # Initial recall count
+  rerank_topk: 8       # Count fed to LLM after rerank
+  pca_dim: 256
+

@@ -1,0 +1,14 @@
+user_model:
+  item_dim: 256
+  user_dim: 256
+  beta_long: 0.1       # Enable personalization for Day 4
+  beta_short: 0.3
+  tau: 1.0
+  preference_extractor_name: qwen3_0_6b_sft # Switch to new extractor
+  rl:
+    eta_long: 1.0e-3
+    eta_short: 5.0e-3
+    ema_alpha: 0.05
+    short_decay: 0.1
+
+llm_name: llama_8b # Switch backend to Llama 3.1

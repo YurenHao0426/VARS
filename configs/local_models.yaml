@@ -1,0 +1,66 @@
+# Base path for all models
+_base_path: &base ./
+
+models:
+  llm:
+    # New Multi-Backend Config
+    qwen_1_5b:
+      backend: qwen
+      path: .//models/qwen2.5-1.5b-instruct
+      device: auto
+      dtype: bfloat16
+      max_context_length: 4096
+
+    llama_8b:
+      backend: llama
+      path: .//models/llama-3.1-8b-instruct
+      device: auto
+      dtype: bfloat16
+      max_context_length: 8192
+
+    # vLLM backend for high-throughput experiments
+    llama_8b_vllm:
+      backend: vllm
+      path: .//models/llama-3.1-8b-instruct
+      vllm_url: http://localhost:8003/v1
+      model_name: meta-llama/Llama-3.1-8B-Instruct
+      max_context_length: 8192
+
+    # Legacy fallback (needed if from_config is called directly without name)
+    hf_id: Qwen/Qwen2.5-1.5B-Instruct
+    local_path: .//models/qwen2.5-1.5b-instruct
+    dtype: bfloat16
+    device_map: auto
+
+  preference_extractor:
+    # Default/Legacy
+    default:
+      hf_id: Qwen/Qwen2.5-0.5B-Instruct
+      local_path: .//models/qwen2.5-0.5b-instruct
+      dtype: bfloat16
+      device_map: auto
+    # New SFT Extractor
+    qwen3_0_6b_sft:
+      path: .//models/pref-extractor-qwen3-0.6b-sft
+      prompt_template_path: fine_tuning_prompt_template.txt
+      device: auto
+      dtype: bfloat16
+      max_new_tokens: 512
+  embedding:
+    qwen3:
+      hf_id: Qwen/Qwen3-Embedding-8B
+      local_path: .//models/qwen3-embedding-8b
+    nemotron:
+      hf_id: nvidia/llama-embed-nemotron-8b
+      local_path: .//models/llama-embed-nemotron-8b
+  reranker:
+    qwen3_8b:
+      hf_id: Qwen/Qwen3-Reranker-8B
+      local_path: .//models/rerankers/qwen3-reranker-8b
+      dtype: bfloat16
+      device_map: auto
+    bge_base:
+      hf_id: BAAI/bge-reranker-base
+      local_path: .//models/rerankers/bge-reranker-base
+      dtype: float16
+      device_map: auto

@@ -1,0 +1,38 @@
+[
+tool.black
+]
+
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "personalization-user-model"
+version = "0.1.0"
+description = "Personalized memory RAG system with online user modeling"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "Anonymous" }
+]
+dependencies = [
+  "torch>=2.3.0",
+  "transformers>=4.44.0",
+  "accelerate>=0.33.0",
+  "huggingface_hub>=0.24.0",
+  "pydantic>=2.7.0",
+  "pyyaml>=6.0.0",
+  "safetensors>=0.4.2"
+]
+
+[project.urls]
+homepage = "https://example.com"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/personalization"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+
