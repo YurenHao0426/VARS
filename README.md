@@ -6,7 +6,7 @@
 >
 > University of Illinois at Urbana-Champaign
 >
-> [[Paper]](paper/paper.pdf)
+> [[Paper]](https://arxiv.org/abs/2603.20939) [[PDF]](paper/paper.pdf)
 
 ## Overview
 
@@ -125,10 +125,14 @@ response = llm.chat(user_id="user_001", query="Explain quicksort")
 ## Citation
 
 ```bibtex
-@article{hao2025vars,
-  title={User Preference Modeling for Conversational LLM Agents: Weak Rewards from Retrieval-Augmented Interaction},
-  author={Hao, Yuren and Mehri, Shuhaib and Zhai, ChengXiang and Hakkani-T{\"u}r, Dilek},
-  year={2025}
+@misc{hao2026userpreferencemodelingconversational,
+      title={User Preference Modeling for Conversational LLM Agents: Weak Rewards from Retrieval-Augmented Interaction},
+      author={Yuren Hao and Shuhaib Mehri and ChengXiang Zhai and Dilek Hakkani-Tür},
+      year={2026},
+      eprint={2603.20939},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2603.20939},
 }
 ```
 
